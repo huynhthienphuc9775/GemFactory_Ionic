@@ -1,0 +1,138 @@
+<app-admin-header></app-admin-header>
+<ion-content class="ion-padding bg-lightgray">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="row-header">
+        <ion-text class="title">밴더 판매건수 트렌드</ion-text>
+        <ion-text class="load-more">더보기<ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-text>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-row class="table-header">
+          <ion-col size="2">
+            <ion-label class="table-title">순위</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="table-title">밴더명</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="table-title">총 판매수</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="table-title">총 판매 매출</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="table-title">총 리뷰수</ion-label>
+          </ion-col>
+          <ion-col size="2" class="ion-text-right">
+            <ion-label class="table-title">순위 변경</ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="table-row" *ngFor="let item of VendorSalesTrends; let i = index">
+          <ion-col size="2">
+            <ion-text class="table-content-name">{{i + 1}}</ion-text>
+          </ion-col>
+          <ion-col class="table-content-name" size="2">
+            <ion-text>{{item.name}}</ion-text>
+          </ion-col>
+          <ion-col class="table-content" size="2">
+            <ion-text>{{item.totalNumber}}</ion-text>
+          </ion-col>
+          <ion-col class="table-content" size="2">
+            <ion-text>{{item.totalSale}}</ion-text>
+          </ion-col>
+          <ion-col class="table-content" size="2">
+            <ion-text>{{item.totalReview}}</ion-text>
+          </ion-col>
+          <ion-col size="2" class="ranking table-content">
+            <ion-text>{{item.changeRanking}}</ion-text>
+            <div style="width: 20px;">
+              <ion-img class="icon" src="../../../assets/icon/up-arrow.png"></ion-img>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-top: 40px;">
+      <ion-col size="12" class="row-header">
+        <ion-text class="title">킥킥 동영상 트렌드</ion-text>
+        <ion-text class="load-more">더보기<ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-text>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-row class="table-header">
+          <ion-col size="2">
+            <ion-label class="table-title">순위</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="table-title">동영상</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="table-title">나이별 시청수</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="table-title">성별 시청수</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="table-title">최대 플레이 수</ion-label>
+          </ion-col>
+          <ion-col size="2" class="ion-text-right">
+            <ion-label class="table-title">순위</ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="table-row" *ngFor="let item of kkVideoTrend; let i = index">
+          <ion-col size="2">
+            <ion-text class="table-content-name">{{i + 1}}</ion-text>
+          </ion-col>
+          <ion-col class="table-content-name" size="2">
+            <ion-text>{{item.name}}</ion-text>
+          </ion-col>
+          <ion-col class="table-content" size="2">
+            <div>
+              <div style="margin-bottom: 5px;">
+                <ion-text>~3살: </ion-text>
+                <ion-text>{{item.viewByAge.three}}</ion-text>
+              </div>
+              <div style="margin-bottom: 5px;">
+                <ion-text>3살~6살: </ion-text>
+                <ion-text>{{item.viewByAge.threeToSix}}</ion-text>
+              </div>
+              <div style="margin-bottom: 5px;">
+                <ion-text>6살이상: </ion-text>
+                <ion-text>{{item.viewByAge.sixUp}}</ion-text>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col class="table-content" size="2">
+            <div>
+              <div style="margin-bottom: 5px;">
+                <ion-text>여자: </ion-text>
+                <ion-text>{{item.viewByGender.female}}</ion-text>
+              </div>
+              <div style="margin-bottom: 5px;">
+                <ion-text>남자: </ion-text>
+                <ion-text>{{item.viewByGender.male}}</ion-text>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col class="table-content" size="2">
+            <ion-text>{{item.numberOfPlay}}</ion-text>
+          </ion-col>
+          <ion-col size="2" class="ranking table-content">
+            <ion-text>{{item.changeRanking}}</ion-text>
+            <div style="width: 20px;">
+              <ion-img class="icon" src="../../../assets/icon/up-arrow.png"></ion-img>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<app-admin-footer></app-admin-footer>

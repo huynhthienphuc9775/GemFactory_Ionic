@@ -1,0 +1,51 @@
+
+
+.col-exel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .chart-title{
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .icon{
+        width: 22px;
+        margin-left: 5px;
+    }
+}
+
+.line-chart{
+    background-color: #FFFFFF;
+    border: 2px solid #DDE4EB;
+}
+
+.col-datepicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-market-status{
+    font-size: 16px;
+    font-weight: 700;
+}
+table {
+    width: 100%;
+}
+
+.status-column{
+    display: flex;
+    align-items: center;
+}
+
+.table-icon{
+    margin-right: 5px;
+}
+@media screen and (max-width: 767px) {
+    .col-datepicker{
+        display: flex;
+        flex-direction: column;
+    }
+}

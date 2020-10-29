@@ -1,0 +1,115 @@
+.label-segment{
+    font-size: 16px;
+    font-weight: 700;
+
+}
+.col-exel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .chart-title{
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .icon{
+        width: 22px;
+        margin-left: 5px;
+    }
+}
+
+.line-chart{
+    background-color: #FFFFFF;
+    border: 2px solid #DDE4EB;
+}
+
+.col-datepicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-market-status{
+    font-size: 16px;
+    font-weight: 700;
+}
+table {
+    width: 100%;
+}
+
+.status-column{
+    display: flex;
+    align-items: center;
+}
+
+.table-icon{
+    margin-right: 5px;
+}
+
+
+
+.row-header{
+    display: flex;
+    justify-content: space-between;
+
+    .title{
+        font-weight: 700;
+        font-size: 16px;
+        color: #000000;
+    }
+
+    .load-more{
+        font-weight: 400;
+        font-size: 12px;
+        color: #4D4D4D;
+    }
+}
+.table-header{
+    background-color: #CFCFCF;
+
+    .table-title{
+        color: #000000;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+.table-row{
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #C4C4C4;
+
+    .table-content-name{
+        font-size: 16px;
+        color: #000000;
+        font-weight: 700;
+    }
+
+    .table-content{
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .age-list{
+    }
+
+    .ranking{
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        font-size: 12px;
+        font-weight: 400;
+
+        .icon{
+            width: 12px;
+            margin-left: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .col-datepicker{
+        display: flex;
+        flex-direction: column;
+    }
+}

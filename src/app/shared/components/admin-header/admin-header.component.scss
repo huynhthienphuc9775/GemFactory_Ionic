@@ -1,0 +1,40 @@
+.title{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.header-menu{
+    text-align: right;
+
+    .small-title{
+        margin-right: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #9C9C9C;
+        cursor: pointer;
+    }
+
+    .page-selected{
+        color: #0047FF;
+    }
+}
+.label-segment{
+    font-size: 16px;
+    font-weight: 700;
+
+}
+@media screen and (max-width: 767px) {
+    .header-menu{
+        text-align: left;
+
+        .small-title{
+            margin-right: 30px;
+        }
+    }
+    .label-segment{
+        font-size: 10px;
+
+    
+    }
+    
+}

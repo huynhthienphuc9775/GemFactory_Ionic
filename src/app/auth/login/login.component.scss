@@ -1,0 +1,81 @@
+@media screen and (min-width: 767px) {
+    .web-login-input {
+       width: 512px;
+       margin: 0 auto;
+    }   
+}
+.login-logo {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.login-btn {
+    background: #E0E0E0 none repeat scroll 0 0;
+    border-color: #E0E0E0;
+    border-radius: 35px;
+    font-family: "BrandonGrotesque-Bold";
+    font-size: 25px;
+    padding: 8px 40px;
+    outline: none;
+}
+.login-btn:hover {
+    background-color: #64126b;
+    color: white;
+    border-color: #fff;
+}
+.remember-me, .forgot-password {
+    color: #fff;
+}
+:host {
+  ion-content {
+    // --background: url('../../../assets/imgs/medication_banner.png') no-repeat center center / cover;
+    --background: #F3F3F3;
+  }
+}
+.list-md {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.box-radius {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.forgot-password:hover{
+    background-color: #64126b;
+    color: white;
+    border-color: #fff;
+ }
+@media screen and (min-width: 767px) {
+ion-checkbox {
+    --border-radius: 50%;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: var(--ion-item-border-color,var(--ion-border-color,var(--ion-color-step-150,#c8c7cc)));
+    --background: var(--ion-item-background,var(--ion-background-color,#fff));
+    --size: 26px;
+    width: var(--size);
+    height: var(--size);
+  }
+}
+
+
+.form-login{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.title{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+.get-start{
+    background: #E0E0E0 none repeat scroll 0 0;
+    border-color: #E0E0E0;
+    border-radius: 35px;
+    font-family: "BrandonGrotesque-Bold";
+    font-size: 25px;
+    padding: 8px 40px;
+    outline: none;
+}

@@ -1,0 +1,247 @@
+<app-admin-header></app-admin-header>
+<ion-content class="ion-padding bg-lightgray">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <ion-toolbar color="bg-lightgray" no-border-top class="toolbar-marging-top">
+                    <ion-segment class="ion-padding" color="medium" [(ngModel)]="currentTab">
+                        <ion-segment-button value="dashboard" (click)="changeTab('dashboard')">
+                            <ion-label class="label-segment">대쉬보드</ion-label>
+                        </ion-segment-button>
+                        <ion-segment-button value="category" (click)="changeTab('category')">
+                            <ion-label class="label-segment">카테고리</ion-label>
+                        </ion-segment-button>
+                    </ion-segment>
+                </ion-toolbar>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="currentTab == 'dashboard'">
+        <ion-row>
+            <ion-col class="col-exel" size="12">
+                <ion-text class="chart-title">총 시청수 추이 그래프</ion-text>
+                <button (click)="exel()" class="exel-btn" mat-stroked-button color="primary">Exel 다운로드<ion-img
+                        class="icon" src="../../../assets/icon/download.png"></ion-img></button>
+            </ion-col>
+            <ion-col class="col-datepicker" size="12">
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker6">
+                    <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+                    <mat-datepicker #picker6></mat-datepicker>
+                </mat-form-field>
+
+                <ion-text class="ion-margin-horizontal">~</ion-text>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker5">
+                    <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                    <mat-datepicker #picker5></mat-datepicker>
+                </mat-form-field>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col size="12" class="line-chart">
+                <app-bar-chart></app-bar-chart>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: 40px;">
+            <ion-col size="12">
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource">
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="오픈마켓 / 벤더명">
+                            <th mat-header-cell *matHeaderCellDef> 인기 동영상 Top 10 </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="Scrapping Status">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element">
+                                <!-- <ion-img class="table-icon" src="../../../assets/icon/cancel.png"></ion-img>
+                                <ion-text>{{element.isActive ? 'Working' : 'Error'}}</ion-text> -->
+
+                                <div class="status-column">
+                                    <div style="width: 20px;">
+                                        <ion-img *ngIf="element.isActive" class="table-icon"
+                                            src="../../../assets/icon/check.png"></ion-img>
+                                        <ion-img *ngIf="!element.isActive" class="table-icon"
+                                            src="../../../assets/icon/cancel.png"></ion-img>
+                                    </div>
+                                    <ion-text>{{element.isActive ? 'Working' : 'Error'}}</ion-text>
+                                </div>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr (click)="getRecord(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: 40px;">
+            <ion-col size="12">
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource">
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="오픈마켓 / 벤더명">
+                            <th mat-header-cell *matHeaderCellDef> 인기 카테고리 Top 10 </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="Scrapping Status">
+                            <th mat-header-cell *matHeaderCellDef> </th>
+                            <td mat-cell *matCellDef="let element">
+                                <!-- <ion-img class="table-icon" src="../../../assets/icon/cancel.png"></ion-img>
+                                <ion-text>{{element.isActive ? 'Working' : 'Error'}}</ion-text> -->
+
+                                <div class="status-column">
+                                    <div style="width: 20px;">
+                                        <ion-img *ngIf="element.isActive" class="table-icon"
+                                            src="../../../assets/icon/check.png"></ion-img>
+                                        <ion-img *ngIf="!element.isActive" class="table-icon"
+                                            src="../../../assets/icon/cancel.png"></ion-img>
+                                    </div>
+                                    <ion-text>{{element.isActive ? 'Working' : 'Error'}}</ion-text>
+                                </div>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr (click)="getRecord(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </ion-col>
+        </ion-row>
+
+
+    </ion-grid>
+
+    <ion-grid *ngIf="currentTab == 'category'">
+        <ion-row>
+            <ion-col class="col-exel" size="12">
+                <ion-text class="chart-title">카테고리별 시청 추이 그래프
+                </ion-text>
+                <button (click)="exel()" class="exel-btn" mat-stroked-button color="primary">Exel 다운로드<ion-img
+                        class="icon" src="../../../assets/icon/download.png"></ion-img></button>
+            </ion-col>
+            <ion-col class="col-datepicker" size="12">
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <ion-text class="ion-margin-horizontal">~</ion-text>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-bottom: 40px;">
+            <ion-col size="12" class="line-chart">
+                <app-line-chart></app-line-chart>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: 40px;">
+            <ion-col size="12" class="row-header">
+                <ion-text class="title">킥킥 동영상 트렌드</ion-text>
+                <ion-text class="load-more">더보기<ion-icon name="chevron-forward-outline"></ion-icon>
+                </ion-text>
+            </ion-col>
+
+            <ion-col size="12">
+                <ion-row class="table-header">
+                    <ion-col size="2">
+                        <ion-label class="table-title">순위</ion-label>
+                    </ion-col>
+                    <ion-col size="2">
+                        <ion-label class="table-title">동영상</ion-label>
+                    </ion-col>
+                    <ion-col size="2">
+                        <ion-label class="table-title">나이별 시청수</ion-label>
+                    </ion-col>
+                    <ion-col size="2">
+                        <ion-label class="table-title">성별 시청수</ion-label>
+                    </ion-col>
+                    <ion-col size="2">
+                        <ion-label class="table-title">최대 플레이 수</ion-label>
+                    </ion-col>
+                    <ion-col size="2" class="ion-text-right">
+                        <ion-label class="table-title">순위</ion-label>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row class="table-row" *ngFor="let item of kkVideoTrend; let i = index">
+                    <ion-col size="2">
+                        <ion-text class="table-content-name">{{i + 1}}</ion-text>
+                    </ion-col>
+                    <ion-col class="table-content-name" size="2">
+                        <ion-text>{{item.name}}</ion-text>
+                    </ion-col>
+                    <ion-col class="table-content" size="2">
+                        <div>
+                            <div style="margin-bottom: 5px;">
+                                <ion-text>~3살: </ion-text>
+                                <ion-text>{{item.viewByAge.three}}</ion-text>
+                            </div>
+                            <div style="margin-bottom: 5px;">
+                                <ion-text>3살~6살: </ion-text>
+                                <ion-text>{{item.viewByAge.threeToSix}}</ion-text>
+                            </div>
+                            <div style="margin-bottom: 5px;">
+                                <ion-text>6살이상: </ion-text>
+                                <ion-text>{{item.viewByAge.sixUp}}</ion-text>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="table-content" size="2">
+                        <div>
+                            <div style="margin-bottom: 5px;">
+                                <ion-text>여자: </ion-text>
+                                <ion-text>{{item.viewByGender.female}}</ion-text>
+                            </div>
+                            <div style="margin-bottom: 5px;">
+                                <ion-text>남자: </ion-text>
+                                <ion-text>{{item.viewByGender.male}}</ion-text>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="table-content" size="2">
+                        <ion-text>{{item.numberOfPlay}}</ion-text>
+                    </ion-col>
+                    <ion-col size="2" class="ranking table-content">
+                        <ion-text>{{item.changeRanking}}</ion-text>
+                        <div style="width: 20px;">
+                            <ion-img class="icon" src="../../../assets/icon/up-arrow.png"></ion-img>
+                        </div>
+                    </ion-col>
+
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<app-admin-footer></app-admin-footer>

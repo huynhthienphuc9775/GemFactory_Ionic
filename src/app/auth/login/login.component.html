@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col size-sm="6" size-md="6" size-lg="6" size-xl="6">
+                    <ion-text class="title">GEM FACTORY</ion-text>
+                </ion-col>
+                <ion-col size-sm="6" size-md="6" size-lg="6" size-xl="6" class="ion-text-end">
+                    <ion-text (click)="getStart()" class="small-title ion-margin-horizontal">로그인</ion-text>
+                    <ion-text (click)="signUp()" class="small-title">회원가입</ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-bg" no-bounce>
+    <ion-grid class="ion-text-center">
+        <ion-row>
+            <ion-col size="12">
+                <h4>안녕하세요</h4>
+                <h4 style="font-weight: bold;">GEM FACTORY입니다</h4>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="ion-text-center">
+        <ion-row>
+            <ion-col size="12">
+                <button *ngIf="!onStart" (click)="getStart()" class="get-start">Get Start</button>
+                <form *ngIf="onStart" class="web-login-input ion-padding form-login">
+                    <ion-list class="box-radius">
+                        <ion-item>
+                            <ion-input type="email" placeholder="Email" [(ngModel)]="loginModel.userName" name="email"
+                                required placeholder="이메일을 입력 해주세요">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input type="password" placeholder="Password" [(ngModel)]="loginModel.password"
+                                name="password" required placeholder="패스워드를 입력 해주세요">
+                            </ion-input>
+                        </ion-item>
+                    </ion-list>
+                </form>
+            </ion-col>
+            <ion-col *ngIf="onStart" size="12">
+                <div class="ion-padding">
+                    <button (click)="signMeIn()" class="login-btn">로그인</button>
+                    <button (click)="signUp()" class="login-btn" >Register</button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row class="ion-padding-horizontal ion-margin-vertical">
+            <ion-col size="12" class="ion-text-center">
+                <h4 style="font-weight: bold;">About Service</h4>
+            </ion-col>
+            <ion-col class="ion-padding-horizontal" size="6" style="background-color: #D1D1D1;">
+
+            </ion-col>
+            <ion-col class="ion-padding-horizontal" size="6">
+                <ion-text>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </ion-text>
+            </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-padding-horizontal ion-margin-vertical">
+            <ion-col size="12" class="ion-text-center">
+                <h4 style="font-weight: bold;">Price</h4>
+            </ion-col>
+            <ion-col class="ion-padding-horizontal" size="6" style="background-color: #D1D1D1;">
+
+            </ion-col>
+            <ion-col class="ion-padding-horizontal" size="6">
+                <ion-text>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </ion-text>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<app-login-footer></app-login-footer>

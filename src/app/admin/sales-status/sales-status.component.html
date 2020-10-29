@@ -1,0 +1,8 @@
+<app-admin-header (outputChangeTab)="changeTab($event)"></app-admin-header>
+<ion-content class="ion-padding bg-lightgray">
+    <app-total-sales-status *ngIf="tab == 'totalSalesStatus'"></app-total-sales-status>
+    <app-market-status *ngIf="tab == 'openMarketStatus'"></app-market-status>
+    <app-smart-store *ngIf="tab == 'naverStoreStatus'"></app-smart-store>
+    <app-keyword *ngIf="tab == 'keywordSalesStatus'"></app-keyword>
+</ion-content>
+<app-admin-footer></app-admin-footer>

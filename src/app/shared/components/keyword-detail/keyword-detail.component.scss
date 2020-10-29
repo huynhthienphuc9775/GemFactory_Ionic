@@ -1,0 +1,96 @@
+.back{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .back-icon{
+        width: 24px;
+        margin-right: 5px;
+
+    }
+}
+
+.info{
+    display: flex;
+
+    .avatar{
+        width: 240px;
+        height: 240px;
+        background-color: #E5E5E5;
+        border: 1px solid #000000;
+        margin-right: 20px;
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+
+        .info-title{
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .info-address{
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.col-exel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .chart-title{
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .icon{
+        width: 22px;
+        margin-left: 5px;
+    }
+}
+
+.line-chart{
+    background-color: #FFFFFF;
+    border: 2px solid #DDE4EB;
+}
+
+.col-datepicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-market-status{
+    font-size: 16px;
+    font-weight: 700;
+}
+table {
+    width: 100%;
+}
+
+.status-column{
+    display: flex;
+    align-items: center;
+}
+
+.table-icon{
+    margin-right: 5px;
+}
+
+.title-keyword{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 767px) {
+    .col-datepicker{
+        display: flex;
+        flex-direction: column;
+    }
+}

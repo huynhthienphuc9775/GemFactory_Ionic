@@ -1,0 +1,73 @@
+.label-segment{
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+.title{
+    font-size: 24px;
+    font-weight: 700;
+}
+.card{
+
+    background-color: #FFFFFF;
+    border: 2px solid #E5E5E5;
+    padding: 20px;
+
+    .stt{
+        font-size: 16px;
+        font-weight: 700;
+        margin-right: 18px;
+    }
+
+    .data-name{
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .float-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .data-ranking{
+        font-size: 12px;
+        font-weight: 400;
+        margin-left: 10px;
+
+
+        .icon{
+            width: 12px;
+        }
+    }
+
+    .text-left{
+        float: left;
+    }
+    
+    .top-10{
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    .text-right{
+        float: right;
+    }
+    
+    .load-more{
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .label-segment{
+        font-size: 10px;
+
+    
+    }
+    
+}

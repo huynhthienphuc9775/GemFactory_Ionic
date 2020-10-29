@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="12" size-sm="12" size-md="6" size-lg="6" size-xl="6">
+                    <ion-text class="title">GEM FACTORY</ion-text>
+                </ion-col>
+                <ion-col size="12" size-sm="12" size-md="6" size-lg="6" size-xl="6" class="header-menu">
+                    <ion-text (click)="changePage('/admin/home')" class="small-title" [ngClass]="pageSelected == '/admin/home' ? 'page-selected': ''">홈</ion-text>
+                    <ion-text (click)="changePage('/admin/sales-status')" class="small-title" [ngClass]="pageSelected == '/admin/sales-status' ? 'page-selected': ''">판매현황</ion-text>
+                    <ion-text (click)="changePage('/admin/video-trend')" class="small-title" [ngClass]="pageSelected == '/admin/video-trend' ? 'page-selected': ''">킥킥 동영상 트랜드</ion-text>
+                    <ion-icon name="person-outline"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+    <ion-toolbar *ngIf="pageSelected == '/admin/sales-status'" no-border-top class="toolbar-marging-top">
+        <ion-segment class="ion-padding" [(ngModel)]="currentTab" color="medium">
+          <ion-segment-button value="totalSalesStatus" (click)="changeTab('totalSalesStatus')">
+            <ion-label class="label-segment">전체 판매 현황</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="openMarketStatus" (click)="changeTab('openMarketStatus')">
+            <ion-label class="label-segment">오픈마켓 판매 현황</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="naverStoreStatus" (click)="changeTab('naverStoreStatus')">
+            <ion-label class="label-segment">네이버스토어 판매 현황</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="keywordSalesStatus" (click)="changeTab('keywordSalesStatus')">
+            <ion-label class="label-segment">키워드 판매 현황</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+</ion-header>

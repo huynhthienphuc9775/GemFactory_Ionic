@@ -1,0 +1,95 @@
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" class="ion-text-center ion-margin">
+                <ion-text class="header">회원가입</ion-text>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row style="display: flex;" class="ion-justify-content-center">
+            <ion-col size="8">
+                <ion-row class="ion-margin-bottom">
+                    <ion-col size="12">
+                        <ion-text class="title">아이디</ion-text>
+                    </ion-col>
+                    <ion-col size="8">
+                        <ion-input class="input" placeholder="이메일을 입력해주세요" type="text" value=""></ion-input>
+                    </ion-col>
+                    <ion-col size="4">
+                        <div class="name-check-btn">
+                            <ion-text class="name-check-text">중복 확인</ion-text>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-margin-bottom">
+                    <ion-col size="12">
+                        <ion-text class="title">패스워드</ion-text>
+                    </ion-col>
+                    <ion-col size="12">
+                        <ion-input class="input" placeholder="영어+숫자 8자" type="text" value=""></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-margin-bottom">
+                    <ion-col size="12">
+                        <ion-text class="title">패스워드 확인</ion-text>
+                    </ion-col>
+                    <ion-col size="12">
+                        <ion-input class="input" placeholder="패스워드 확인" type="text" value=""></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-margin-bottom">
+                    <ion-col size="12">
+                        <ion-text class="title">전화 번호</ion-text>
+                    </ion-col>
+                    <ion-col size="12">
+                        <ion-input class="input" placeholder="ex)010-0000-0000" type="text" value=""></ion-input>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-margin-bottom">
+                    <ion-col size="12" class="ion-margin-bottom">
+                        <ion-text class="title">등록 오픈마켓</ion-text>
+                    </ion-col>
+                    <ion-col size="12">
+                        <ion-radio-group value="grape" style="display: flex;">
+                            <ion-radio mode="md" value="grape"></ion-radio>
+                            <ion-text class="ion-margin-horizontal">11번가</ion-text>
+                        </ion-radio-group>
+                    </ion-col>
+                    <ion-col size="12">
+                        <ion-input class="input" placeholder="판매자 아이디" type="text" value=""></ion-input>
+                    </ion-col>
+                    <ion-col size="12" class="ion-margin-bottom">
+                        <ion-input class="input attach-image" placeholder="+로그인 인증 페이지 스크린샷 첨부" type="text" value="">
+                        </ion-input>
+                    </ion-col>
+                    <ion-col size="12">
+                        <ion-radio-group value="grape">
+                            <div *ngFor="let item of list" class="ion-margin-bottom">
+                                <ion-radio slot="start" mode="md"></ion-radio>
+                                <ion-label class="ion-margin-horizontal title">{{item.name}}</ion-label>
+                            </div>
+
+                        </ion-radio-group>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col size="8">
+                <ion-row>
+                    <ion-col size="6">
+                        <div (click)="save()" class="name-check-btn" style="padding: 10px 0;">
+                            <ion-text class="name-check-text" style="font-size: 24px;">취소</ion-text>
+                        </div>
+                    </ion-col>
+                    <ion-col size="6">
+                        <div (click)="cancel()" class="name-check-btn" style="padding: 10px 0;">
+                            <ion-text class="name-check-text" style="font-size: 24px;">확인</ion-text>
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<app-admin-footer></app-admin-footer>

@@ -1,0 +1,7 @@
+{
+  "name": "GemFactory",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
