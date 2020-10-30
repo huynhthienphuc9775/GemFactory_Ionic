@@ -17,25 +17,25 @@ export class LineChartComponent implements OnInit {
   public lineChartData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', lineTension: 0, },
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B', lineTension: 0, },
-    { data: [20, 20, 20, 20, 20, 20, 20], label: 'Series C', lineTension: 0, },
-    { data: [30, 30, 30, 30, 30, 30, 30], label: 'Series D', lineTension: 0, },
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series E', lineTension: 0, },
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series G', lineTension: 0, },
+    // { data: [20, 20, 20, 20, 20, 20, 20], label: 'Series C', lineTension: 0, },
+    // { data: [30, 30, 30, 30, 30, 30, 30], label: 'Series D', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series E', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series G', lineTension: 0, },
 
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series G', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series G', lineTension: 0, },
 
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series J', lineTension: 0, },
-    { data: [70, 70, 70, 70, 70, 70, 70], label: 'Series M', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series J', lineTension: 0, },
+    // { data: [70, 70, 70, 70, 70, 70, 70], label: 'Series M', lineTension: 0, },
 
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series N', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series N', lineTension: 0, },
 
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series B', lineTension: 0, },
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series J', lineTension: 0, },
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series M', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series B', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series J', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series M', lineTension: 0, },
 
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series N', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series N', lineTension: 0, },
 
-    { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series B', lineTension: 0, },
+    // { data: [40, 40, 40, 40, 40, 40, 40], label: 'Series B', lineTension: 0, },
 
 
   ];
