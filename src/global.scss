@@ -61,8 +61,20 @@
         align-items: end;
     }
 }
+
+
 @media screen and (max-width: 767px) {
     .res-float-right{
         text-align: left;
+    }
+
+    .myChart{
+        height: auto;
+        width: 1000px;
+    }
+      
+    .myChartWrapper{
+        width: 500px;
+        overflow: scroll;
     }
 }
