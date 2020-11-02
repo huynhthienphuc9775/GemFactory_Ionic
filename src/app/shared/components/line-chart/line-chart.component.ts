@@ -3,6 +3,9 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
 
+import { Chart } from 'angular-highcharts';
+import { Options } from 'highcharts';
+
 @Component({
   selector: 'app-line-chart',
   templateUrl: './line-chart.component.html',
@@ -13,6 +16,9 @@ export class LineChartComponent implements OnInit {
   @Input() yAxesTick: boolean;
   @Input() yAxesGridLines: boolean = false;
   @Input() showLineChartLegend: boolean = true;
+
+  chart: Chart;
+  options: any;
 
   public lineChartData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', lineTension: 0, },
@@ -71,82 +77,109 @@ export class LineChartComponent implements OnInit {
   public lineChartType: ChartType = 'line';
   public lineChartPlugins = [pluginAnnotations];
 
-  @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
+  // @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
   constructor() { }
+  ngOnInit() {
+    this.init();
+  }
 
-  ngOnInit(): void {
-    this.lineChartLegend = this.showLineChartLegend;
-
-    this.lineChartOptions = {
+  init() {
+    this.options = {
+      margin: 0,
+      title: {
+        style: {
+           color: '#FFFFFF',
+        }
+     },
+      yAxis: {
+        title: {
+            text: null
+        }
+      },
+      chart: {
+        type: 'line'
+      },
+      credits: {
+        enabled: false
+      },
       legend: {
-        position: 'bottom',
-      },
-      tooltips: { enabled: false },
-      responsive: true,
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display: false
-          },
-        }],
-        yAxes: [{
-          gridLines: {
-            display: this.yAxesGridLines
-          },
-          ticks: {
-            display: this.yAxesTick
+        layout: 'vertical',
+        align: 'right',
+        maxHeight: 200,
+        verticalAlign: 'top',
+        y: 30,
+        navigation: {
+          activeColor: '#3E576F',
+          animation: true,
+          arrowSize: 12,
+          inactiveColor: '#CCC',
+          style: {
+            fontWeight: 'bold',
+            color: '#333',
+            fontSize: '12px'
           }
-        }]
+        }
+
       },
-      annotation: {
-  
+
+      series: [{
+        name: 'Installation',
+        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+      }, {
+        name: 'Manufacturing',
+        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+      }, {
+        name: 'Sales & Distribution',
+        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+      }, {
+        name: 'Project Development',
+        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+      }, {
+        name: 'Other',
+        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
       },
-    }
-  }
+      {
+        name: 'Installation',
+        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+      }, {
+        name: 'Manufacturing',
+        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+      }, {
+        name: 'Sales & Distribution',
+        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+      }, {
+        name: 'Project Development',
+        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+      }, {
+        name: 'Other',
+        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+      },
+      {
+        name: 'Installation',
+        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+      }, {
+        name: 'Manufacturing',
+        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+      }, {
+        name: 'Sales & Distribution',
+        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+      }, {
+        name: 'Project Development',
+        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+      }, {
+        name: 'Other',
+        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+      }]
+    };
+    let chart = new Chart(this.options);
+    chart.addPoint(4);
+    this.chart = chart;
+    chart.addPoint(5);
+    setTimeout(() => {
+      chart.addPoint(6);
+    }, 2000);
 
-  public randomize(): void {
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        this.lineChartData[i].data[j] = this.generateNumber(i);
-      }
-    }
-    this.chart.update();
-  }
-
-  private generateNumber(i: number): number {
-    return Math.floor((Math.random() * (i < 2 ? 100 : 1000)) + 1);
-  }
-
-  // events
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public hideOne(): void {
-    const isHidden = this.chart.isDatasetHidden(1);
-    this.chart.hideDataset(1, !isHidden);
-  }
-
-  public pushOne(): void {
-    this.lineChartData.forEach((x, i) => {
-      const num = this.generateNumber(i);
-      const data: number[] = x.data as number[];
-      data.push(num);
-    });
-    this.lineChartLabels.push(`Label ${this.lineChartLabels.length}`);
-  }
-
-  public changeColor(): void {
-    this.lineChartColors[2].borderColor = 'green';
-    this.lineChartColors[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
-  }
-
-  public changeLabel(): void {
-    this.lineChartLabels[2] = ['1st Line', '2nd Line'];
+    chart.ref$.subscribe(c => console.log(c.options.chart));
   }
 }

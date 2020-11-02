@@ -5,6 +5,9 @@ import { IonicModule } from '@ionic/angular';
 import { ChartsModule } from 'ng2-charts';
 import { DatePickerModule } from 'ionic4-date-picker';
 
+import { ChartModule } from 'angular-highcharts';
+
+
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -63,7 +66,8 @@ import { ItemNameDetailComponent } from './components/item-name-detail/item-name
         MatDatepickerModule,
         MatNativeDateModule,
         MatPaginatorModule,
-        MatTableModule
+        MatTableModule,
+        ChartModule
     ],
     exports: [
       AdminHeaderComponent,
