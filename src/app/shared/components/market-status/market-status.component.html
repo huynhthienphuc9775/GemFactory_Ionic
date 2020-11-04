@@ -23,14 +23,8 @@
             </mat-form-field>
         </ion-col>
     </ion-row>
-
-    <ion-row>
-        <ion-col size="12" class="line-chart">
-            <app-line-chart [yAxesTick]="false"></app-line-chart>
-
-        </ion-col>
-    </ion-row>
 </ion-grid>
+<app-line-chart [yAxesTick]="false"></app-line-chart>
 
 <ion-grid style="margin-bottom: 40px;">
     <ion-row>
@@ -57,14 +51,8 @@
             </mat-form-field>
         </ion-col>
     </ion-row>
-
-    <ion-row>
-        <ion-col size="12" class="line-chart">
-            <app-line-chart [yAxesTick]="false"></app-line-chart>
-
-        </ion-col>
-    </ion-row>
 </ion-grid>
+<app-line-chart [yAxesTick]="false"></app-line-chart>
 
 <ion-grid style="margin-bottom: 40px;">
     <ion-row>
@@ -91,14 +79,11 @@
             </mat-form-field>
         </ion-col>
     </ion-row>
+</ion-grid>
 
-    <ion-row>
-        <ion-col size="12" class="line-chart">
-            <app-line-chart [yAxesTick]="false"></app-line-chart>
+<app-line-chart [yAxesTick]="false"></app-line-chart>
 
-        </ion-col>
-    </ion-row>
-
+<ion-grid>
     <ion-row style="margin-top: 40px;">
         <ion-text class="title-market-status">유통벤더 리스트</ion-text>
         <ion-col size="12">
@@ -120,8 +105,10 @@
 
                             <div class="status-column">
                                 <div style="width: 20px;">
-                                    <ion-img *ngIf="element.isActive" class="table-icon" src="../../../assets/icon/check.png"></ion-img>
-                                    <ion-img *ngIf="!element.isActive" class="table-icon" src="../../../assets/icon/cancel.png"></ion-img>
+                                    <ion-img *ngIf="element.isActive" class="table-icon"
+                                        src="../../../assets/icon/check.png"></ion-img>
+                                    <ion-img *ngIf="!element.isActive" class="table-icon"
+                                        src="../../../assets/icon/cancel.png"></ion-img>
                                 </div>
                                 <ion-text>{{element.isActive ? 'Working' : 'Error'}}</ion-text>
                             </div>

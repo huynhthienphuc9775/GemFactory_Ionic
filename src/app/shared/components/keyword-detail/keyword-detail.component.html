@@ -14,7 +14,7 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding bg-lightgray">
+<div style="background-color: #F3F3F3; overflow-y: auto;" class="ion-padding">
     <ion-grid>
         <ion-row>
             <ion-col size="12">
@@ -47,14 +47,10 @@
                 </mat-form-field>
             </ion-col>
         </ion-row>
-
-        <ion-row>
-            <ion-col size="12" class="line-chart">
-                <app-line-chart [showLineChartLegend]="false"></app-line-chart>
-
-            </ion-col>
-        </ion-row>
     </ion-grid>
+
+    <app-line-chart [showLineChartLegend]="false"></app-line-chart>
+
 
     <ion-grid style="margin-bottom: 40px;">
         <ion-row>
@@ -81,14 +77,10 @@
                 </mat-form-field>
             </ion-col>
         </ion-row>
-
-        <ion-row>
-            <ion-col size="12" class="line-chart">
-                <app-line-chart></app-line-chart>
-
-            </ion-col>
-        </ion-row>
     </ion-grid>
+    
+    <app-line-chart></app-line-chart>
+
 
     <ion-grid style="margin-top: 40px;">
         <ion-row>
@@ -132,6 +124,6 @@
         </ion-row>
     </ion-grid>
 
-</ion-content>
+</div>
 
 <app-admin-footer></app-admin-footer>

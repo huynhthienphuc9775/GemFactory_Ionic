@@ -67,9 +67,15 @@
   
 .highcharts-root{
     width: 100% !important;
+    font-weight: 700;
+
 }
 
 
+.line-chart{
+    background-color: #FFFFFF;
+    border: 2px solid #DDE4EB;
+}
 
 @media screen and (max-width: 767px) {
     .res-float-right{
